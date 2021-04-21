@@ -1,0 +1,37 @@
+﻿@page "/ReportViewer"
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@inject IJSRuntime JSRuntime
+
+
+<div class="ej-content">
+    <div id="report-viewer" style="width: 100%;height: 100%"></div>
+</div>
+
+@code {
+    protected bool IsDisabled { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    // ReportViewer options
+
+    // Used to render the Bold Report Viewer component in Blazor page.
+    public async void RenderReportViewer()
+    {
+        //Globals.stopwatch.Stop();
+        //TimeSpan timeSpan = Globals.stopwatch.Elapsed;
+        //System.Diagnostics.Debug.WriteLine("Time: {0}h {1}m {2}s {3}ms", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+        BoldReportViewerOptions viewerOptions = new BoldReportViewerOptions();
+        viewerOptions.ReportName = "sales-order-detail.rdl";
+        viewerOptions.ServiceURL = "https://demos.boldreports.com/services/api/ReportViewerWebApi";
+        await JSRuntime.InvokeVoidAsync("BoldReports.RenderViewer", "report-viewer", viewerOptions);
+    }
+    // Initial rendering of Bold Report Viewer
+    protected override void OnAfterRender(bool firstRender)
+    {
+        RenderReportViewer();
+    }
+}

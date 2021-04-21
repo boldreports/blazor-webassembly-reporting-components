@@ -1,0 +1,13 @@
+﻿.e-reportviewer .e-reportviewer-toolbarcontainer .e-reportviewer-toolbarul.e-show {
+    border-style: none;
+    float: right;
+}
+
+.ej-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 250px;
+    top: 48px;
+}
