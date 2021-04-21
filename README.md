@@ -25,7 +25,7 @@ Take a look at the Bold Reporting Components live demo [here](https://demos.bold
 
 ## Documentation
 
-A complete Bold Reports documentation can be found on [Bold Reports Help](https://documentation.boldreports.com/).
+A complete Bold Reports documentation can be found on [Bold Reports Help](https://help.boldreports.com/).
 
 ## Support and Feedback
 
